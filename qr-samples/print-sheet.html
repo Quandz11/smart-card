@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>SmartPass Printable QR Sample Kit</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 10mm;
+    }
+    * {
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f3f4f6;
+      color: #111827;
+    }
+    .a4-page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 12mm;
+      margin: 10mm auto;
+      background: white;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+    }
+    .page-header {
+      border-bottom: 2px solid #0f766e;
+      padding-bottom: 6mm;
+      margin-bottom: 8mm;
+    }
+    .page-header h2 {
+      margin: 0 0 2mm 0;
+      color: #0f766e;
+      font-size: 14pt;
+      font-weight: 700;
+    }
+    .page-header p {
+      margin: 0;
+      font-size: 9pt;
+      color: #4b5563;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 8mm;
+      flex: 1;
+    }
+    .qr-card {
+      border: 1.5px dashed #9ca3af;
+      border-radius: 8px;
+      padding: 6mm;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: #fafafa;
+    }
+    .badge-type {
+      background: #0f766e;
+      color: white;
+      font-size: 8pt;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 12px;
+      margin-bottom: 2mm;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .card-title {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #1f2937;
+      min-height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2mm;
+    }
+    .qr-img-wrapper {
+      background: white;
+      padding: 4px;
+      border-radius: 6px;
+      border: 1px solid #e5e7eb;
+      margin-bottom: 2mm;
+    }
+    .qr-image {
+      width: 58mm;
+      height: 58mm;
+      display: block;
+    }
+    .human-code-box {
+      background: #e6fffa;
+      border: 1px solid #99f6e4;
+      border-radius: 4px;
+      padding: 2mm 4mm;
+      margin-bottom: 2mm;
+      width: 100%;
+    }
+    .human-label {
+      display: block;
+      font-size: 7pt;
+      color: #0f766e;
+      font-weight: 600;
+    }
+    .human-code {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      font-size: 12pt;
+      color: #0d9488;
+      letter-spacing: 1px;
+    }
+    .card-location {
+      font-size: 8pt;
+      color: #4b5563;
+      margin-bottom: 2mm;
+      font-style: italic;
+    }
+    .card-flow {
+      font-size: 7.5pt;
+      color: #374151;
+      text-align: left;
+      width: 100%;
+      border-top: 1px dotted #d1d5db;
+      padding-top: 1.5mm;
+    }
+    @media print {
+      body {
+        background: none;
+      }
+      .a4-page {
+        margin: 0;
+        box-shadow: none;
+        page-break-after: always;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+    <div class="a4-page">
+      <div class="page-header">
+        <h2>BỘ MÃ QR DỊCH VỤ THỬ NGHIỆM SMARPASS - TRANG 1/8</h2>
+        <p>In theo tỷ lệ 100% (Khổ A4 tiêu chuẩn, không co giãn trang). Mỗi ô cắt theo đường kẻ viền nét đứt.</p>
+      </div>
+      <div class="cards-grid">
+        
+          <div class="qr-card">
+            <div class="badge-type">CANTEEN_POINT</div>
+            <div class="card-title">Quầy Căng tin Số 1</div>
+            <div class="qr-img-wrapper">
+              <img src="png/canteen_point-canteen-pos-01.png" alt="CANTEEN_POINT-C66FE3" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">CANTEEN_POINT-C66FE3</strong>
+            </div>
+            <div class="card-location">Dán tại: Quầy thu ngân căng tin chính</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để mở giao diện tự nhập số tiền thanh toán từ ví cá nhân</div>
+          </div>
+        
+          <div class="qr-card">
+            <div class="badge-type">BOOK</div>
+            <div class="card-title">Clean Code: A Handbook of Agile Software Craftsmanship</div>
+            <div class="qr-img-wrapper">
+              <img src="png/book-bk-001.png" alt="BOOK-076791" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">BOOK-076791</strong>
+            </div>
+            <div class="card-location">Dán tại: Bìa sau cuốn sách "Clean Code: A Handbook of Agile Software Craftsmanship" (BK-001)</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để mượn sách vào tài khoản (tối đa 3 cuốn đang mượn)</div>
+          </div>
+        
+          <div class="qr-card">
+            <div class="badge-type">BOOK</div>
+            <div class="card-title">Design Patterns: Elements of Reusable Object-Oriented Software</div>
+            <div class="qr-img-wrapper">
+              <img src="png/book-bk-002.png" alt="BOOK-0775A7" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">BOOK-0775A7</strong>
+            </div>
+            <div class="card-location">Dán tại: Bìa sau cuốn sách "Design Patterns: Elements of Reusable Object-Oriented Software" (BK-002)</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để mượn sách vào tài khoản (tối đa 3 cuốn đang mượn)</div>
+          </div>
+        
+          <div class="qr-card">
+            <div class="badge-type">BOOK</div>
+            <div class="card-title">Introduction to Algorithms (CLRS 4th Edition)</div>
+            <div class="qr-img-wrapper">
+              <img src="png/book-bk-003.png" alt="BOOK-B83618" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">BOOK-B83618</strong>
+            </div>
+            <div class="card-location">Dán tại: Bìa sau cuốn sách "Introduction to Algorithms (CLRS 4th Edition)" (BK-003)</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để mượn sách vào tài khoản (tối đa 3 cuốn đang mượn)</div>
+          </div>
+        
+      </div>
+    </div>
+  
+    <div class="a4-page">
+      <div class="page-header">
+        <h2>BỘ MÃ QR DỊCH VỤ THỬ NGHIỆM SMARPASS - TRANG 2/8</h2>
+        <p>In theo tỷ lệ 100% (Khổ A4 tiêu chuẩn, không co giãn trang). Mỗi ô cắt theo đường kẻ viền nét đứt.</p>
+      </div>
+      <div class="cards-grid">
+        
+          <div class="qr-card">
+            <div class="badge-type">BOOK</div>
+            <div class="card-title">Computer Networks: A Systems Approach</div>
+            <div class="qr-img-wrapper">
+              <img src="png/book-bk-004.png" alt="BOOK-CB534F" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">BOOK-CB534F</strong>
+            </div>
+            <div class="card-location">Dán tại: Bìa sau cuốn sách "Computer Networks: A Systems Approach" (BK-004)</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để mượn sách vào tài khoản (tối đa 3 cuốn đang mượn)</div>
+          </div>
+        
+          <div class="qr-card">
+            <div class="badge-type">BOOK</div>
+            <div class="card-title">Modern Operating Systems (Andrew S. Tanenbaum)</div>
+            <div class="qr-img-wrapper">
+              <img src="png/book-bk-005.png" alt="BOOK-7DDC1A" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">BOOK-7DDC1A</strong>
+            </div>
+            <div class="card-location">Dán tại: Bìa sau cuốn sách "Modern Operating Systems (Andrew S. Tanenbaum)" (BK-005)</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để mượn sách vào tài khoản (tối đa 3 cuốn đang mượn)</div>
+          </div>
+        
+          <div class="qr-card">
+            <div class="badge-type">BOOK</div>
+            <div class="card-title">Artificial Intelligence: A Modern Approach</div>
+            <div class="qr-img-wrapper">
+              <img src="png/book-bk-006.png" alt="BOOK-C031D8" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">BOOK-C031D8</strong>
+            </div>
+            <div class="card-location">Dán tại: Bìa sau cuốn sách "Artificial Intelligence: A Modern Approach" (BK-006)</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để mượn sách vào tài khoản (tối đa 3 cuốn đang mượn)</div>
+          </div>
+        
+          <div class="qr-card">
+            <div class="badge-type">BOOK</div>
+            <div class="card-title">Database System Concepts (Silberschatz)</div>
+            <div class="qr-img-wrapper">
+              <img src="png/book-bk-007.png" alt="BOOK-DBBEE3" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">BOOK-DBBEE3</strong>
+            </div>
+            <div class="card-location">Dán tại: Bìa sau cuốn sách "Database System Concepts (Silberschatz)" (BK-007)</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để mượn sách vào tài khoản (tối đa 3 cuốn đang mượn)</div>
+          </div>
+        
+      </div>
+    </div>
+  
+    <div class="a4-page">
+      <div class="page-header">
+        <h2>BỘ MÃ QR DỊCH VỤ THỬ NGHIỆM SMARPASS - TRANG 3/8</h2>
+        <p>In theo tỷ lệ 100% (Khổ A4 tiêu chuẩn, không co giãn trang). Mỗi ô cắt theo đường kẻ viền nét đứt.</p>
+      </div>
+      <div class="cards-grid">
+        
+          <div class="qr-card">
+            <div class="badge-type">BOOK</div>
+            <div class="card-title">Cracking the Coding Interview</div>
+            <div class="qr-img-wrapper">
+              <img src="png/book-bk-008.png" alt="BOOK-D3C944" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">BOOK-D3C944</strong>
+            </div>
+            <div class="card-location">Dán tại: Bìa sau cuốn sách "Cracking the Coding Interview" (BK-008)</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để mượn sách vào tài khoản (tối đa 3 cuốn đang mượn)</div>
+          </div>
+        
+          <div class="qr-card">
+            <div class="badge-type">BOOK</div>
+            <div class="card-title">Designing Data-Intensive Applications (Martin Kleppmann)</div>
+            <div class="qr-img-wrapper">
+              <img src="png/book-bk-009.png" alt="BOOK-9FCF31" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">BOOK-9FCF31</strong>
+            </div>
+            <div class="card-location">Dán tại: Bìa sau cuốn sách "Designing Data-Intensive Applications (Martin Kleppmann)" (BK-009)</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để mượn sách vào tài khoản (tối đa 3 cuốn đang mượn)</div>
+          </div>
+        
+          <div class="qr-card">
+            <div class="badge-type">BOOK</div>
+            <div class="card-title">The Pragmatic Programmer: Your Journey To Mastery</div>
+            <div class="qr-img-wrapper">
+              <img src="png/book-bk-010.png" alt="BOOK-9BE79B" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">BOOK-9BE79B</strong>
+            </div>
+            <div class="card-location">Dán tại: Bìa sau cuốn sách "The Pragmatic Programmer: Your Journey To Mastery" (BK-010)</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để mượn sách vào tài khoản (tối đa 3 cuốn đang mượn)</div>
+          </div>
+        
+          <div class="qr-card">
+            <div class="badge-type">PARKING_IN</div>
+            <div class="card-title">Cổng gửi xe - Lối vào</div>
+            <div class="qr-img-wrapper">
+              <img src="png/parking_in-gate-park-in-01.png" alt="PARKING_IN-B368C4" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">PARKING_IN-B368C4</strong>
+            </div>
+            <div class="card-location">Dán tại: Cột barie lối vào bãi giữ xe máy</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để check-in gửi xe vào bãi</div>
+          </div>
+        
+      </div>
+    </div>
+  
+    <div class="a4-page">
+      <div class="page-header">
+        <h2>BỘ MÃ QR DỊCH VỤ THỬ NGHIỆM SMARPASS - TRANG 4/8</h2>
+        <p>In theo tỷ lệ 100% (Khổ A4 tiêu chuẩn, không co giãn trang). Mỗi ô cắt theo đường kẻ viền nét đứt.</p>
+      </div>
+      <div class="cards-grid">
+        
+          <div class="qr-card">
+            <div class="badge-type">PARKING_OUT</div>
+            <div class="card-title">Cổng gửi xe - Lối ra</div>
+            <div class="qr-img-wrapper">
+              <img src="png/parking_out-gate-park-out-01.png" alt="PARKING_OUT-7C6CB4" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">PARKING_OUT-7C6CB4</strong>
+            </div>
+            <div class="card-location">Dán tại: Cột barie lối ra bãi giữ xe máy</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để xem thời gian đỗ, tính phí 2.000 ₫/h và xác nhận ra</div>
+          </div>
+        
+          <div class="qr-card">
+            <div class="badge-type">ROOM</div>
+            <div class="card-title">Phòng học nhóm A101</div>
+            <div class="qr-img-wrapper">
+              <img src="png/room-phong-hoc-nhom-a101.png" alt="ROOM-B642F0" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">ROOM-B642F0</strong>
+            </div>
+            <div class="card-location">Dán tại: Cửa ra vào Phòng học nhóm A101</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để xem thông tin phòng, lịch trống hôm nay và đặt phòng</div>
+          </div>
+        
+          <div class="qr-card">
+            <div class="badge-type">ROOM</div>
+            <div class="card-title">Phòng học nhóm A102</div>
+            <div class="qr-img-wrapper">
+              <img src="png/room-phong-hoc-nhom-a102.png" alt="ROOM-46E048" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">ROOM-46E048</strong>
+            </div>
+            <div class="card-location">Dán tại: Cửa ra vào Phòng học nhóm A102</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để xem thông tin phòng, lịch trống hôm nay và đặt phòng</div>
+          </div>
+        
+          <div class="qr-card">
+            <div class="badge-type">ROOM</div>
+            <div class="card-title">Phòng Lab Tin học B201</div>
+            <div class="qr-img-wrapper">
+              <img src="png/room-phong-lab-tin-hoc-b201.png" alt="ROOM-A010C9" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">ROOM-A010C9</strong>
+            </div>
+            <div class="card-location">Dán tại: Cửa ra vào Phòng Lab Tin học B201</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để xem thông tin phòng, lịch trống hôm nay và đặt phòng</div>
+          </div>
+        
+      </div>
+    </div>
+  
+    <div class="a4-page">
+      <div class="page-header">
+        <h2>BỘ MÃ QR DỊCH VỤ THỬ NGHIỆM SMARPASS - TRANG 5/8</h2>
+        <p>In theo tỷ lệ 100% (Khổ A4 tiêu chuẩn, không co giãn trang). Mỗi ô cắt theo đường kẻ viền nét đứt.</p>
+      </div>
+      <div class="cards-grid">
+        
+          <div class="qr-card">
+            <div class="badge-type">ROOM</div>
+            <div class="card-title">Phòng Lab Tin học B202</div>
+            <div class="qr-img-wrapper">
+              <img src="png/room-phong-lab-tin-hoc-b202.png" alt="ROOM-F31AF4" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">ROOM-F31AF4</strong>
+            </div>
+            <div class="card-location">Dán tại: Cửa ra vào Phòng Lab Tin học B202</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để xem thông tin phòng, lịch trống hôm nay và đặt phòng</div>
+          </div>
+        
+          <div class="qr-card">
+            <div class="badge-type">ROOM</div>
+            <div class="card-title">Hội trường Thư viện C301</div>
+            <div class="qr-img-wrapper">
+              <img src="png/room-hoi-truong-thu-vien-c301.png" alt="ROOM-98326F" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">ROOM-98326F</strong>
+            </div>
+            <div class="card-location">Dán tại: Cửa ra vào Hội trường Thư viện C301</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để xem thông tin phòng, lịch trống hôm nay và đặt phòng</div>
+          </div>
+        
+          <div class="qr-card">
+            <div class="badge-type">ROOM</div>
+            <div class="card-title">Phòng Nghiên cứu D101</div>
+            <div class="qr-img-wrapper">
+              <img src="png/room-phong-nghien-cuu-d101.png" alt="ROOM-5A6AB7" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">ROOM-5A6AB7</strong>
+            </div>
+            <div class="card-location">Dán tại: Cửa ra vào Phòng Nghiên cứu D101</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để xem thông tin phòng, lịch trống hôm nay và đặt phòng</div>
+          </div>
+        
+          <div class="qr-card">
+            <div class="badge-type">ROOM</div>
+            <div class="card-title">Lab 102</div>
+            <div class="qr-img-wrapper">
+              <img src="png/room-lab-102.png" alt="ROOM-BBE371" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">ROOM-BBE371</strong>
+            </div>
+            <div class="card-location">Dán tại: Cửa ra vào Lab 102</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để xem thông tin phòng, lịch trống hôm nay và đặt phòng</div>
+          </div>
+        
+      </div>
+    </div>
+  
+    <div class="a4-page">
+      <div class="page-header">
+        <h2>BỘ MÃ QR DỊCH VỤ THỬ NGHIỆM SMARPASS - TRANG 6/8</h2>
+        <p>In theo tỷ lệ 100% (Khổ A4 tiêu chuẩn, không co giãn trang). Mỗi ô cắt theo đường kẻ viền nét đứt.</p>
+      </div>
+      <div class="cards-grid">
+        
+          <div class="qr-card">
+            <div class="badge-type">ROOM</div>
+            <div class="card-title">Lab 201</div>
+            <div class="qr-img-wrapper">
+              <img src="png/room-lab-201.png" alt="ROOM-F42F47" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">ROOM-F42F47</strong>
+            </div>
+            <div class="card-location">Dán tại: Cửa ra vào Lab 201</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để xem thông tin phòng, lịch trống hôm nay và đặt phòng</div>
+          </div>
+        
+          <div class="qr-card">
+            <div class="badge-type">ROOM</div>
+            <div class="card-title">Lab 302</div>
+            <div class="qr-img-wrapper">
+              <img src="png/room-lab-302.png" alt="ROOM-BEB003" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">ROOM-BEB003</strong>
+            </div>
+            <div class="card-location">Dán tại: Cửa ra vào Lab 302</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để xem thông tin phòng, lịch trống hôm nay và đặt phòng</div>
+          </div>
+        
+          <div class="qr-card">
+            <div class="badge-type">ROOM</div>
+            <div class="card-title">Phòng 402</div>
+            <div class="qr-img-wrapper">
+              <img src="png/room-phong-402.png" alt="ROOM-898A0D" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">ROOM-898A0D</strong>
+            </div>
+            <div class="card-location">Dán tại: Cửa ra vào Phòng 402</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để xem thông tin phòng, lịch trống hôm nay và đặt phòng</div>
+          </div>
+        
+          <div class="qr-card">
+            <div class="badge-type">ROOM</div>
+            <div class="card-title">Phòng 405</div>
+            <div class="qr-img-wrapper">
+              <img src="png/room-phong-405.png" alt="ROOM-93DD0E" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">ROOM-93DD0E</strong>
+            </div>
+            <div class="card-location">Dán tại: Cửa ra vào Phòng 405</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để xem thông tin phòng, lịch trống hôm nay và đặt phòng</div>
+          </div>
+        
+      </div>
+    </div>
+  
+    <div class="a4-page">
+      <div class="page-header">
+        <h2>BỘ MÃ QR DỊCH VỤ THỬ NGHIỆM SMARPASS - TRANG 7/8</h2>
+        <p>In theo tỷ lệ 100% (Khổ A4 tiêu chuẩn, không co giãn trang). Mỗi ô cắt theo đường kẻ viền nét đứt.</p>
+      </div>
+      <div class="cards-grid">
+        
+          <div class="qr-card">
+            <div class="badge-type">ROOM</div>
+            <div class="card-title">Phòng 501</div>
+            <div class="qr-img-wrapper">
+              <img src="png/room-phong-501.png" alt="ROOM-B109F4" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">ROOM-B109F4</strong>
+            </div>
+            <div class="card-location">Dán tại: Cửa ra vào Phòng 501</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để xem thông tin phòng, lịch trống hôm nay và đặt phòng</div>
+          </div>
+        
+          <div class="qr-card">
+            <div class="badge-type">EVENT</div>
+            <div class="card-title">[SEED] Đêm nhạc Hội Chào tân sinh viên K26</div>
+            <div class="qr-img-wrapper">
+              <img src="png/event-6af493ea54c562f750ad0659.png" alt="EVENT-358798" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">EVENT-358798</strong>
+            </div>
+            <div class="card-location">Dán tại: Poster sự kiện "[SEED] Đêm nhạc Hội Chào tân sinh viên K26"</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã poster để xem thông tin chi tiết và đăng ký tham gia sự kiện</div>
+          </div>
+        
+          <div class="qr-card">
+            <div class="badge-type">EVENT</div>
+            <div class="card-title">[SEED] Triển lãm Đồ án Tốt nghiệp Xuất sắc</div>
+            <div class="qr-img-wrapper">
+              <img src="png/event-6af493ea54c562f750ad0654.png" alt="EVENT-E6D89D" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">EVENT-E6D89D</strong>
+            </div>
+            <div class="card-location">Dán tại: Poster sự kiện "[SEED] Triển lãm Đồ án Tốt nghiệp Xuất sắc"</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã poster để xem thông tin chi tiết và đăng ký tham gia sự kiện</div>
+          </div>
+        
+          <div class="qr-card">
+            <div class="badge-type">EVENT</div>
+            <div class="card-title">[SEED] Seminar: Kotlin Multiplatform & Jetpack Compose</div>
+            <div class="qr-img-wrapper">
+              <img src="png/event-6af493ea54c562f750ad0651.png" alt="EVENT-732919" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">EVENT-732919</strong>
+            </div>
+            <div class="card-location">Dán tại: Poster sự kiện "[SEED] Seminar: Kotlin Multiplatform & Jetpack Compose"</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã poster để xem thông tin chi tiết và đăng ký tham gia sự kiện</div>
+          </div>
+        
+      </div>
+    </div>
+  
+    <div class="a4-page">
+      <div class="page-header">
+        <h2>BỘ MÃ QR DỊCH VỤ THỬ NGHIỆM SMARPASS - TRANG 8/8</h2>
+        <p>In theo tỷ lệ 100% (Khổ A4 tiêu chuẩn, không co giãn trang). Mỗi ô cắt theo đường kẻ viền nét đứt.</p>
+      </div>
+      <div class="cards-grid">
+        
+          <div class="qr-card">
+            <div class="badge-type">GATE_IN</div>
+            <div class="card-title">Cổng chính - Lối vào</div>
+            <div class="qr-img-wrapper">
+              <img src="png/gate_in-campus-gate-in-01.png" alt="GATE_IN-C2570F" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">GATE_IN-C2570F</strong>
+            </div>
+            <div class="card-location">Dán tại: Trụ turnstile kiểm soát lối vào cổng chính</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để ghi nhận vào trường (AccessLog action=entry)</div>
+          </div>
+        
+          <div class="qr-card">
+            <div class="badge-type">GATE_OUT</div>
+            <div class="card-title">Cổng chính - Lối ra</div>
+            <div class="qr-img-wrapper">
+              <img src="png/gate_out-campus-gate-out-01.png" alt="GATE_OUT-6D2108" class="qr-image" />
+            </div>
+            <div class="human-code-box">
+              <span class="human-label">MÃ NHẬP TAY (HUMAN CODE):</span>
+              <strong class="human-code">GATE_OUT-6D2108</strong>
+            </div>
+            <div class="card-location">Dán tại: Trụ turnstile kiểm soát lối ra cổng chính</div>
+            <div class="card-flow"><strong>Luồng:</strong> Sinh viên quét mã để ghi nhận ra trường (AccessLog action=exit)</div>
+          </div>
+        
+      </div>
+    </div>
+  
+</body>
+</html>

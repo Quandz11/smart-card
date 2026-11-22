@@ -1,0 +1,35 @@
+/* Global CSS for layout tweaks */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #F5F7F8;
+  color: #1F2937;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ensure full height container */
+#root {
+  min-height: 100vh;
+}
+
+/* Table styling polish */
+.ant-table-wrapper {
+  background: transparent;
+}
+
+.ant-table-thead > tr > th {
+  background-color: #F8FAFC !important;
+  color: #4B5563 !important;
+  font-weight: 600 !important;
+  border-bottom: 1px solid #E5E7EB !important;
+}
+
+.ant-table-tbody > tr > td {
+  border-bottom: 1px solid #F3F4F6 !important;
+}
+
